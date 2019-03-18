@@ -1,0 +1,38 @@
+@(employee: models.users.Employee)
+     
+
+
+<!-- Pass page title and user on to main -->
+@main("My Account", employee) {
+
+ 
+        <!-- Main -->  
+      
+      <div class= container-fluid padding>
+          <div class="account">
+              <h1> Welcome to your account</h1>
+              
+              
+         <div class="row">
+              <div class="col-md-5">
+     
+        
+        <h2> My Info</h2>
+            <h4>Email: @employee.getEmail</h4>
+            <h4>Name: @employee.getName </h4>
+            <h4>DOB: @employee.getDateOfBirth</h4>
+            <h4>Department: @employee.getDepartment.getName</h4>
+            <h4>Job Title: @employee.getJobTitle</h4>
+        
+     
+			
+       
+
+
+              </div>
+         
+              </div>
+          </div>  
+      </div>
+      
+}

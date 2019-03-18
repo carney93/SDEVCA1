@@ -1,0 +1,76 @@
+@(employees: List[models.users.Employee],projects: List[models.Project],user: models.users.User)
+@main("Employee Projects", user){
+     
+
+ 
+        <!-- Main -->  
+      
+      <div class= container-fluid padding>
+          <div class="employees">
+          
+              <div class ="pageTitle">
+              <div class="col-sm-12">
+                     <h1> Projects that are Employees are working on</h1>
+              </div>
+                  </div>
+                       
+              <div class="row text-center">
+                        
+                      	<div class="col-sm-3">
+		<h4>Projects</h4>
+		<div class="list-group">
+			<a href="@routes.HomeController.projects(0)" class="list-group-item">All Projects</a>
+			@for(p<-projects) {
+                <a href="@routes.HomeController.projects(p.getProjectId)" class="list-group-item">@p.getProjectName
+
+            </a>
+			}
+		</div>
+	</div>     
+                           
+                           
+                           
+                           
+                <div class="col-9">
+                    
+                    <table class="table table-bordered table-hover table-condensed">
+            <thead>
+        <!-- The header row-->
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Department</th>
+            <th>Job Title</th>
+        </tr>
+        </thead>
+        <tbody>
+     
+        <!-- Users row(s) -->
+       
+            @* Loop for creating table rows from User data *@
+            @for(e<-employees) {
+               <tr>
+                  <td>@e.getEmail</td>
+                  <td>@e.getName</td>
+                  <td>@e.getDateOfBirth</td>
+                  <td>@e.getDepartment.getName</td>
+                  <td>@e.getJobTitle</td>
+                    
+            
+               </tr>
+            }
+        
+        </tbody>
+    </table>
+              
+ 
+    
+             </div>
+        </div>  
+              
+              
+          </div>  
+      </div>
+      
+}

@@ -1,0 +1,153 @@
+html {
+    background-color: black;
+}
+
+
+
+ /* Navigation bar */
+
+#brand-img {
+    height: 35px;
+}
+
+.navbar-brand, ul ,.my-nav {
+  background-color: black;
+    color: #2166A5;
+}
+
+.nav-link {
+    color: #2166A5;
+}
+
+.nav-link:hover{
+    color:white;
+}
+
+ 
+.dropdown-menu{
+    background-color: black;
+}
+
+.dropdown-item{
+    color: #2166A5;
+}
+
+.dropdown-item:hover{
+    color: white;
+    background-color: black;
+}
+
+
+/*Homepage */
+
+.jumbotron{
+    margin-top: 5%;
+    background: url("/assets/images/jumbotron.jpg");
+    background-size: cover;
+   color: white;
+      padding-top: 15%;
+      padding-bottom: 15%;
+}
+
+hr {
+    border: 1px solid;
+    width: 90%;
+}
+
+#aboutus{
+    margin-bottom: 5%;
+}
+
+/* Footer */
+
+footer p, footer h4, footer hr {
+    color: #2166A5;
+    
+}
+
+
+footer {
+    padding-top: 2%;
+    background-color: black;
+}
+
+/* Login Page */
+
+.login {
+    padding-top: 8%;
+    width: 90%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 4%;
+
+
+    
+}
+
+
+.login h1 {
+    margin-bottom: 3%;
+}
+
+.login button{
+    border-color: black; 
+    color: white;
+    background-color: black;
+}
+
+.login button:hover{
+    color: #CBA560;
+    background-color: black;
+border-color: black;
+}
+
+/* account Page */
+
+.account {
+    padding-top: 8%;
+    width: 90%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 4%;
+   
+}
+
+/* Add Employee Page */
+
+.addEmployee {
+    padding-top: 8%;
+    width: 90%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 4%;
+
+
+    
+}
+
+/* Employees Page */
+
+.employees {
+    padding-top: 8%;
+    width: 90%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 4%;
+  
+}
+
+
+
+.pageTitle {
+margin-bottom: 5%;
+}
+
+

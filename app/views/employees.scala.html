@@ -1,0 +1,88 @@
+@(employees: List[models.users.Employee],department: List[models.Department],user: models.users.User)
+@main("Employees", user){
+     
+
+ 
+        <!-- Main -->  
+      
+      <div class= container-fluid padding>
+           <div class="employees">
+          
+              <div class ="pageTitle">
+              <div class="col-sm-12">
+                     <h1> Employees on the System</h1>
+              </div>
+                  </div>
+                       
+              <div class="row text-center">
+                        
+                      	<div class="col-sm-3">
+		<h4>View Employees by Department</h4>
+		<div class="list-group">
+			<a href="@routes.HomeController.employees(0)" class="list-group-item">All Departments</a>
+			@for(d<-department) {
+                <a href="@routes.HomeController.employees(d.getId)" class="list-group-item">@d.getName
+
+            </a>
+			}
+		</div>
+	</div>     
+              
+              
+                           
+                           
+                           
+                           
+                <div class="col-9">
+                    
+                    <table class="table table-bordered table-hover table-condensed">
+            <thead>
+        <!-- The header row-->
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Department</th>
+            <th>Job Title</th>
+        </tr>
+        </thead>
+        <tbody>
+     
+        <!-- Users row(s) -->
+       
+            @* Loop for creating table rows from User data *@
+            @for(e<-employees) {
+               <tr>
+                  <td>@e.getEmail</td>
+                  <td>@e.getName</td>
+                  <td>@e.getDateOfBirth</td>
+                  <td>@e.getDepartment.getName</td>
+                  <td>@e.getJobTitle</td>
+            <td>
+							<a href="@routes.HomeController.deleteEmployee(e.getEmail)" i class="far fa-trash-alt" onclick="return confirmDel();">
+							</a>
+						</td>
+             <td>
+							<a href="@routes.HomeController.updateEmployee(e.getEmail)" class="fas fa-pen" onclick="return confirmDel();">
+							</a>
+						</td>
+               </tr>
+            }
+        
+        </tbody>
+    </table>
+              
+                  <p>
+        <a href="@routes.HomeController.addEmployee()">
+            <button class="btn btn-primary">Add a new Employee</button>
+        </a>
+    </p>
+    
+             </div>
+        </div>  
+              
+              
+          </div>  
+      </div>
+      
+}

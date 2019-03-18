@@ -1,0 +1,44 @@
+@(addProject: Form[models.Project],user: models.users.User)
+@import helper._   
+@main("Add Project", user){
+ 
+
+        <!-- Main -->   
+
+    
+      <div class= container-fluid padding>
+          <div class="addEmployee">
+              <h1>Add a new Project</h1>
+              
+         <div class="row">
+              <div class="col-md-5">
+                  
+@form(action=routes.HomeController.addProjectSubmit(), 'class -> "form-horizontal", 'role -> "form") {
+          @* CSRF attack prevention *@
+        @* This token, sent by the controller, will be used to authenticate the form submission *@
+        @CSRF.formField
+                
+                
+            @inputText(addProject("ProjectName"), '_label -> "Project Name", 'class -> "form-control")
+             
+             @inputText(addProject("projectId"), '_label -> "", 'hidden -> "hidden")
+
+          
+
+    
+
+<div class="actions">
+                <input type="submit" value="Add/Update Project" class="btn btn-primary">
+                <a href="@routes.HomeController.viewProjectsSite()">
+                    <button type="button" class="btn btn-warning">Cancel</button>
+                </a>
+            </div>
+                  } @* end of form *@
+
+              </div>
+   
+              </div>
+          </div>  
+      </div>
+   
+     }

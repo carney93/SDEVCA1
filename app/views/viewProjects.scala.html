@@ -1,0 +1,61 @@
+@(projects: List[models.Project],user: models.users.User)
+@main("Projects", user){
+     
+
+ 
+        <!-- Main -->  
+      
+      <div class= container-fluid padding>
+           <div class="employees">
+                 
+               <div class ="pageTitle">
+               <h1>Projects on the System</h1>
+               </div>
+               
+                <div class="col-12">
+                    
+                    <table class="table table-bordered table-hover table-condensed">
+            <thead>
+        <!-- The header row-->
+        <tr>
+            <th>Project Name</th>
+
+        </tr>
+        </thead>
+        <tbody>
+     
+        <!-- Project row(s) -->
+       
+            @* Loop for creating table rows from User data *@
+            @for(p<-projects) {
+               <tr>
+                  <td>@p.getProjectName
+                  </td>
+                   <td>
+							<a href="@routes.HomeController.deleteProject(p.getProjectId)" i class="far fa-trash-alt" onclick="return confirmDel();">
+							</a>
+						</td>
+            <td>
+            	<a href="@routes.HomeController.updateProject(p.getProjectId)" class="fas fa-pen" onclick="return confirmDel();">
+							</a>
+						</td>
+   
+            }
+        
+        </tbody>
+    </table>
+              
+                  <p>
+        <a href="@routes.HomeController.addProject()">
+            <button class="btn btn-primary">Add a new Project</button>
+        </a>
+    </p>
+    
+             </div>
+        </div>  
+              
+              
+          </div>  
+      </div>
+      
+}
